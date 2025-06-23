@@ -1,0 +1,56 @@
+import random
+import time
+
+name1 = input("Enter player1 name:")
+name2 = input("Enter player2 name:")
+nums = []
+
+while (len(nums) < 5):
+    d = random.randint(1, 10)
+    if (d in nums):
+        continue
+    else:
+        nums.append(d)
+
+print("Computer has 5 integers from 1 to 10 in mind")
+print("You have 3 turns to guess it.. ready for game")
+print("-----------------------------------------------")
+
+player1 = []
+player2 = []
+s1 = 0
+s2 = 0
+
+for i in range(3):
+    print("Hi {} ---TURN{}".format(name1, (i+1)))
+    a = int(input("Turn{} predict: ".format(i+1)))
+    player1.append(a)
+    if (a in nums):
+        print("----->CORRECT")
+        s1 = s1 + 1
+    else:
+        print("----->WRONG")
+
+    print("Hi {} ---TURN{}".format(name2, (i+1)))
+    b = int(input("Turn{} predict: ".format(i+1)))
+    player2.append(b)
+    if (b in nums):
+        print("----->CORRECT")
+        s2 = s2 + 1
+    else:
+        print("----->WRONG")
+
+print("-----------------------------------------------")
+print("Let's see the summary")
+print("Computer has fixed", nums)
+print("Player1 has chosen", player1)
+print("Their score is ", s1)
+print("Player2 has chosen", player2)
+print("Their score is ", s2)
+print("-----------------------------------------------")
+if(s1>s2):
+    print("The whinner is ", name1)
+elif(s2>s1):
+    print("The winner is ", name2)
+else:
+    print(f"{name1,  name2}     Drawn")
