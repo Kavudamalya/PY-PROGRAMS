@@ -1,0 +1,20 @@
+names=["A","B","C","D","E","F","G","H","I","J"]
+memo=[0,1,1,1,2,2,1,2,1,2]
+salary= [2000,1500,3500,2000,3250,1450,4500,2800,4600,5000]
+d=list(zip(names,memo,salary))
+rm= [i for i in d if i[2]>4000]
+rem= [i for i in d if i[2]<=4000]
+rm.sort(key=lambda x:x[2], reverse=True)
+to_rm= []
+for i in rm:
+    if(i[1]>1):
+        to_rm.append(i)
+    if(len(to_rm)==3):
+        break
+res= rm+to_rm
+print("The employees who are to be fired are:")
+pos=1 
+for i in res:
+    print("{}. {} is to be fired. Their salary is {} and memo is {}".format(pos,i[0],i[2],i[1]))
+    pos=pos+1
+    
