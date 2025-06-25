@@ -1,0 +1,7 @@
+def r(a):
+    if(a==1):
+        return
+    r(a-1)
+    print("hai")
+    r(a-1)
+r(5)
