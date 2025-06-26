@@ -1,0 +1,25 @@
+y=int(input("Enter the year:"))
+a=y%400
+b=a//100
+c=a%100
+d=c//4
+e=c-d
+f=((b*5)+(d*2)+e)%7
+print(f)
+match f:
+    case 0:
+        print("December 31 is on Sunday")
+    case 1:
+        print("December 31 is on Monday")
+    case 2:
+        print("December 31 is on Tuesday")
+    case 3:
+        print("December 31 is on Wednesday")
+    case 4:
+        print("December 31 is on Thursday")
+    case 5:
+        print("December 31 is on Friday")
+    case 6:
+        print("December 31 is on Saturday")
+    case _:
+        print("Invalid")
